@@ -1,0 +1,12 @@
+
+W
+java:S1854":Remove this useless assignment to local variable "server".(¸ÿ»å8´·ÏÑ¨1
+H
+java:S1481"+Remove this unused "server" local variable.(¸ÿ»å8¹·ÏÑ¨1
+L	java:S106"+Replace this use of System.out by a logger.(®†“Òıÿÿÿÿ8¹·ÏÑ¨1
+V
+java:S1128"9Remove this unused import 'io.muserver.rest.RestHandler'.(ìÇÆø8ü¾çÑ¨1
+H
+java:S1128",Remove this unused import 'javax.ws.rs.GET'.(Şãw8ü¾çÑ¨1
+O
+java:S1128"-Remove this unused import 'javax.ws.rs.Path'.(Š§¢éùÿÿÿÿ8ı¾çÑ¨1
