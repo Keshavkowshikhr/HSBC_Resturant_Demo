@@ -19,19 +19,6 @@ public class BookingResource {
 
     @POST
     @Path("/create")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createBooking(Booking booking) {
-        // Handle the booking object, e.g., save it to a database
-        // You can access booking fields using getters like booking.getCustomerName()
-        // You can also return the created booking or a confirmation response
-
-        // Assuming you have some logic to save the booking, you can return a response like this:
-        // return Response.status(201).entity("Booking created: " + booking.getCustomerName()).build();
-        return Response.status(201).entity("Booking created").build();
-    }
-
-    @POST
-    @Path("/create")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     public Response createBooking(
             @FormParam("customerName") String customerName,
@@ -39,6 +26,12 @@ public class BookingResource {
             @FormParam("date") String date,
             @FormParam("time") String time) {
         // Create a Booking object with the provided parameters
+
+        	if (customerName == null || customerName.isEmpty() || tableSize == 0 || time == null || time.isEmpty()
+				|| date == null || date.isEmpty()) {
+			throw new WebApplicationException("Missing required Parameters for booking", Response.Status.BAD_REQUEST);
+		}
+        
         Booking booking = new Booking(customerName, tableSize, date, time);
         bookings.add(booking);
 
